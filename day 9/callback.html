@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // fungsi yang menerima callback
+        function prosesdata(callback) {
+            setTimeout(function() {
+                // simulasi operasi yang membutuhkan waktu, misalnya mengambil data dari server
+                console.log("data diproses");
+
+                // setelah selesai, kita memanggil callback
+                callback();
+            }, 200); // 2 detik penundaan untuk mensimulasikan operasi asinkron
+        }
+
+        // fungsi callback
+        function setelahselesai() {
+            console.log("operasi selesai, callback dipanggil");   
+        }
+
+        // memanggil fungsi prosesdata dan melewatkan callaback sebagai argumen
+        prosesdata(setelahselesai);
+    </script>
+</head>
+<body>
+    <h1>contoh callback di javascript</h1>
+    <p>buka konsol browser (f12) untuk melihat dari callback</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="tampilkanarray()">
+     <h1>contoh array di javascript</h1>
+    <p id="pertama"></p>
+    <p id="kedua"></p>
+    <p id="hapus"></p>
+    <p id="hapuspertama"></p>
+    <p id="panjang"></p>
+    <p id="semuahewan"></p>
+    <script>
+        function tampilkanarray() {
+            // membuat array sederhana berisi nama-nama hewan
+            var hewan = ["kucing", "hamster", "domba", "tupai", "anjing", "monyet", "ular", "kangguru", "ikan", "babi", "harimau"];
+            // mengakses elemen dari array
+            document.getElementById("pertama").innerHTML = "hewan pertama: " + hewan[0];
+            document.getElementById("kedua").innerHTML = "hewan kedua: " + hewan[1];
+            // menambahkan hewan baru ke array
+            hewan.push("buaya"); // 'push' digunakan untuk menambahkan item
+            // menghapus -hewan terakhir dari array menggunakan pop
+            var hewanterakhir = hewan.pop(); // 'pop' digunakan untuk menghapus hewan terakhir
+            // menghapus buah pertama dari array menggunakan pop
+            var hewanpertama = hewan.shift(); // 'shift' digunakan untuk menghapus hewan pertama
+            // menampilkan hasil setelah menghapus hewan terakhir
+            document.getElementById("hapus").innerHTML = "hewan terakhir yang dihapus: " + hewanterakhir;
+            //menampilkan hasil setelah menghapus hewan pertama
+            document.getElementById("hapuspertama").innerHTML = "hewan pertama yang dihapus: " + hewanpertama;
+            //menampilkan panjang array dan semua elemennya
+            document.getElementById("panjang").innerHTML = "total hewan setelah penghapusan: " + hewan.length; // 'lenght' digunakan untuk
+            document.getElementById("semuahewan").innerHTML = "semua hewan: " + hewan.join(", ");
+        }
+    </script>
+    
+</body>
+</html>

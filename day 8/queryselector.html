@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="myclass">first element</div>
+    <div class="myclass">second element</div>
+    <div class="myclass">third element</div>
+
+    <script>
+        // hanya mengambil element pertama yang cocok
+        let element = document.querySelector('.myclass');
+        console.log(element.textContent); // ouput : first element
+
+        let elements = document.querySelectorAll('.myclass');
+        console.log(elements[2].textContent); // ouput : second element
+    </script>
+</body>
+</html>

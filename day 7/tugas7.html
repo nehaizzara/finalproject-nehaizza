@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>biodata siswa</h1>
+    <div class="identitas">
+       nama : neha
+    </div>
+    <div class="identitas">
+        kelas : x
+    </div>
+    <div class="identitas">
+        jurusan : teknik jaringan komputer
+    </div>
+    
+    <h2>masukan nama siswa</h2>
+     <input type="text" id="nama" placeholder="masukan nama"><br><br>
+     <button onclick="tampilkanBiodata ()">tampilkan biodata</button>
+    <script>
+       function showAlert() {
+         alert('button sudah di klik!')
+       }
+    </script> 
+    <h2>hasil biodata</h2>
+    <p id="hasil"></p>
+    <script>
+        function tampilkanBiodata() {
+        let nama = document.getElementById("nama").value;
+            let identitas = document.getElementsByClassName("identitas");
+        
+         if (nama === "") {
+                alert("nama harus diisi");
+                return false; // menghentikan pengiriman form
+              
+            } else {
+             alert("selamat datang, " + nama + "!");
+
+             let kelas = identitas[1].textContent;
+             let jurusan = identitas[2].textContent;
+
+             document.getElementById("hasil").innerHTML =
+             "Nama: " + nama + "<br>" +
+             kelas + "<br>" +
+             jurusan;
+            // 'nama' yang ada disamping harus sesuai dengan nama yang ada di 'let = nama'
+            return true; // jika validasi berhasil, lanjutkan pengiriman tanpa form
+           }
+
+
+        }
+    </script>
+</body>
+</html>

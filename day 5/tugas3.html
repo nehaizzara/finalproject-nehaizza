@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>dagangan iput</h2>
+
+    <label for="rating">masukan rating</label>
+    <input type="number" id="rating" placeholder="masukan rating">
+    <button onclick="cekrating()">cek rating</button>
+
+    <p id="hasil"></p>
+
+    <script>
+       //fungsi untuk mengecek rating dan menampilkan grade
+      function cekrating() {
+        //mengambil rating dari input
+        var rating = Number(document.getElementById("rating").value);
+        var hasil = "";
+
+        //cek kondisi rating ditentukan grade
+       if (rating >= 9) {
+           hasil = "sangat enak.";  
+       } else if (rating >= 7) {
+           hasil = "enak.";
+       } else if (rating >= 5) {
+           hasil = "cukup enak.";
+       } else if (rating >= 3) {
+           hasil = "kurang enak.";
+       } else {
+           hasil= "tidak enak"
+       }
+       document.getElementById("hasil").innerHTML = hasil;
+        
+      }
+    </script>
+
+
+    
+
+</body>
+</html>

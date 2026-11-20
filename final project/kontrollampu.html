@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrol 4 Lampu Snoopy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: linear-gradient(135deg, #29235c, #7656a6, #c5a5d8);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #ddd;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .lampu-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            border: 2px solid white;
+        }
+
+        /* Background Snoopy Lampu 1 */
+        .card:nth-child(1) {
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.65),
+                    rgba(255,255,255,0.65)
+                ),
+                url("../img/snp.jpg");
+        }
+
+        /* Background Snoopy Lampu 2 */
+        .card:nth-child(2) {
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.65),
+                    rgba(255,255,255,0.65)
+                ),
+                url("../img/sn-color.jpg");
+        }
+
+        /* Background Snoopy Lampu 3 */
+        .card:nth-child(3) {
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.65),
+                    rgba(255,255,255,0.65)
+                ),
+                url("../img/3.webp");
+        }
+
+        /* Background Snoopy Lampu 4 */
+        .card:nth-child(4) {
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.65),
+                    rgba(255,255,255,0.65)
+                ),
+                url("../img/4.jpg");
+        }
+
+        .card h2 {
+            color: #49366e;
+            margin-bottom: 15px;
+        }
+
+        .foto-lampu {
+            width: 160px;
+            height: 150px;
+            object-fit: contain;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+
+        .foto-lampu.nyala {
+            filter: drop-shadow(0 0 15px #ffd700);
+        }
+
+        .status {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .info {
+            background: #f1eef8;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            font-size: 14px;
+            min-height: 55px;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .btn-on {
+            background: #16a34a;
+        }
+
+        .btn-on:hover:not(:disabled) {
+            background: #15803d;
+            transform: scale(1.05);
+        }
+
+        button:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+
+        @media(max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .lampu-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>💡 KONTROL 4 LAMPU SNOOPY</h1>
+
+        <p class="subtitle">
+            Sistem kontrol lampu menggunakan JavaScript
+        </p>
+
+        <div class="lampu-container">
+
+            <!-- LAMPU 1 -->
+            <div class="card">
+                <h2>Lampu 1</h2>
+
+                <img src="../img/lampumati.jpg"
+                    id="lampu1" class="foto-lampu">
+
+                <p class="status" id="status1">MATI</p>
+
+                <div class="info">
+                    <span id="ket1">Belum menyala</span>
+                </div>
+
+                <button class="btn-on" id="on1"
+                    onclick="nyalakanlampu(1)">
+                    ON
+                </button>
+            </div>
+
+            <!-- LAMPU 2 -->
+            <div class="card">
+                <h2>Lampu 2</h2>
+
+                <img src="../img/lampumati.jpg"
+                    id="lampu2" class="foto-lampu">
+
+                <p class="status" id="status2">MATI</p>
+
+                <div class="info">
+                    <span id="ket2">Belum menyala</span>
+                </div>
+
+                <button class="btn-on" id="on2"
+                    onclick="nyalakanlampu(2)">
+                    ON
+                </button>
+            </div>
+
+            <!-- LAMPU 3 -->
+            <div class="card">
+                <h2>Lampu 3</h2>
+
+                <img src="../img/lampumati.jpg"
+                    id="lampu3" class="foto-lampu">
+
+                <p class="status" id="status3">MATI</p>
+
+                <div class="info">
+                    <span id="ket3">Belum menyala</span>
+                </div>
+
+                <button class="btn-on" id="on3"
+                    onclick="nyalakanlampu(3)">
+                    ON
+                </button>
+            </div>
+
+            <!-- LAMPU 4 -->
+            <div class="card">
+                <h2>Lampu 4</h2>
+
+                <img src="../img/lampumati.jpg"
+                    id="lampu4" class="foto-lampu">
+
+                <p class="status" id="status4">MATI</p>
+
+                <div class="info">
+                    <span id="ket4">Belum menyala</span>
+                </div>
+
+                <button class="btn-on" id="on4"
+                    onclick="nyalakanlampu(4)">
+                    ON
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        // DATA 4 LAMPU
+        let dataLampu = [];
+
+        for (let i = 0; i < 4; i++) {
+            dataLampu.push({
+                nyala: false,
+                mulai: null,
+                timer: null
+            });
+        }
+
+        // FUNGSI MENYALAKAN LAMPU
+        function nyalakanlampu(nomor) {
+
+            let lampu = dataLampu[nomor - 1];
+
+            if (lampu.nyala) return;
+
+            lampu.nyala = true;
+            lampu.mulai = Date.now();
+
+            let gambar = document.getElementById("lampu" + nomor);
+
+            // Ganti gambar menjadi lampu hidup
+            gambar.src = "../img/lampuhidup.jpg";
+            gambar.classList.add("nyala");
+
+            // Ubah status menjadi menyala
+            document.getElementById("status" + nomor).innerHTML = "MENYALA";
+
+            document.getElementById("status" + nomor).style.color = "green";
+
+            // Nonaktifkan tombol ON sementara
+            document.getElementById("on" + nomor).disabled = true;
+
+            // Hitung mundur 5 detik
+            lampu.timer = setInterval(function () {
+
+                let durasi = Math.floor(
+                    (Date.now() - lampu.mulai) / 1000
+                );
+
+                if (durasi < 5) {
+
+                    document.getElementById("ket" + nomor).innerHTML =
+                        "Lampu mati dalam " + (5 - durasi) + " detik";
+
+                } else {
+
+                    clearInterval(lampu.timer);
+                    lampu.timer = null;
+
+                    matikanlampu(nomor);
+
+                }
+
+            }, 100);
+
+        }
+
+        // FUNGSI MEMATIKAN LAMPU OTOMATIS
+        function matikanlampu(nomor) {
+
+            let lampu = dataLampu[nomor - 1];
+
+            if (!lampu.nyala) return;
+
+            lampu.nyala = false;
+
+            clearInterval(lampu.timer);
+            lampu.timer = null;
+
+            let gambar = document.getElementById("lampu" + nomor);
+
+            // Ganti gambar menjadi lampu mati
+            gambar.src = "../img/lampumati.jpg";
+            gambar.classList.remove("nyala");
+
+            // Ubah status menjadi mati
+            document.getElementById("status" + nomor).innerHTML = "MATI";
+
+            document.getElementById("status" + nomor).style.color = "red";
+
+            // Keterangan lampu
+            document.getElementById("ket" + nomor).innerHTML =
+                "Lampu mati otomatis setelah 5 detik";
+
+            // Tombol ON aktif kembali
+            document.getElementById("on" + nomor).disabled = false;
+
+        }
+
+    </script>
+
+</body>
+</html>

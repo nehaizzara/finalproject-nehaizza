@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     
+        *{
+            box-sizing: border-box;
+        }
+
+          body {
+            font-family: arial, sans-serif;
+            margin: 0;
+            background-color: aliceblue;
+        }
+
+        /* HEADER */
+        header {
+            background-color: rgb(206, 186, 224);
+            color: white;
+            padding: 25px;
+            text-align: center;
+
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* NAVIGASI */
+        nav {
+            background-color: black;
+            padding: 15px;
+            text-align: center;
+
+        }
+
+        nav a  {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-weight: bold;
+
+        }
+
+        nav a:hover {
+            color: pink;
+            background-color: #a98bc5;
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+        
+        /* MAIN */
+        main {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+
+        }
+
+        /* CARD */
+        .card {
+            background-color: white;
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+        }
+
+        .card h2 {
+            color: #a98bc5;
+
+        }
+         
+        /* GAMBAR */
+        .card img {
+            width: 100%;
+            max-width: 250px;
+            height: 180px;
+            border-radius: 12px;
+
+        }
+
+        /* PROJECT */
+         .project {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+         }
+
+         .projecth2 {
+            color: #a98bc5;
+
+         }
+
+         /* SOSIAL MEDIA */
+         .social {
+            text-align: center;
+            padding: 25px;
+            background-color: #e5d8f0;
+
+         }
+
+         .social a {
+            display: inline-block;
+            color: white;
+            background-color: #a98bc5;
+            text-decoration: none;
+            padding: 10px 18px;
+            margin: 5px;
+            border-radius: 20px;
+
+         }
+
+         .social a:hover {
+            background-color: #80629e;
+
+         }
+
+         /* FOOTER */
+         footer {
+            background-color: darkgray;
+            color: white;
+            text-align: center;
+            padding: 15px;
+
+         }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            main {
+                flex-direction: column;
+            }
+        
+        
+        nav a {
+            display: inline-block;
+            margin: 8px;
+
+        }
+
+        .card {
+            width: 100%;
+        }
+        /* FOOTER */ 
+           footer {
+             background-color: darkgray;
+             color: white;
+             text-align: center;
+             padding: 15px;
+             
+        } 
+        
+    }
+    </style>
+    </head>
+<body>
+    
+    
+     <!-- header -->
+         <header id="home">
+            <h1>welcome to website ♡</h1>
+            <p>my personal website | neha izza ramadhani</p>
+         </header>
+
+         <!-- navigasi -->
+          <nav> 
+            <a href="./table.html">home</a>
+            <a href="./kontrollampu.html">project</a>
+            <a href="./table.html">back</a>
+          </nav>
+
+          <!-- MAIN -->
+           <main>
+            
+              <!-- ABOUT ME ♡ -->
+               <div class="card" id="about">
+
+                <h2>ABOUT ME ♡</h2>
+
+                <img src="https://www.wikihow.com/images/0/01/Draw-Snoopy-Step-27.jpg" alt="my picture">
+
+                <p>
+                Hello everyone! Let me introduce myself.
+                My name is Neha Izza Ramadhani.
+                I was born on August 24, 2011.
+                I live in Sayung, Demak, Central Java.
+            </p>
+
+            <p>
+                I love cooking, traveling, and enjoying nature.
+                I enjoy visiting beautiful places, seeing mountains,
+                beaches, and green landscapes.
+            </p>
+
+            <p>
+                My dream is to visit many beautiful places,
+                explore the world, improve my cooking skills,
+                and make my family proud.
+            </p>
+
+            <p>
+                "Collect moments, not things.
+                Enjoy the beauty of nature!"
+            </p>
+
+        </div>
+
+        <!-- DREAM DESTINATION -->
+        <div class="card">
+
+            <h2>My Dream Destination 🗼</h2>
+
+            <h3>Eiffel Tower - Paris</h3>
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA4yLZo0cplvaqfGusCCe23_AbkiKnbFRwbiFNKbNd_tRKAu2n22aQvmc&s=10"
+                alt="Eiffel Tower">
+
+            <p>
+                Menara Eiffel adalah bangunan ikonik yang
+                terletak di Paris, Prancis. Menara ini memiliki
+                tinggi sekitar 330 meter dan dibangun pada tahun 1889.
+            </p>
+
+            <p>
+                Menara Eiffel terkenal karena bentuknya yang unik,
+                pemandangannya yang indah, serta lampu-lampunya
+                yang berkilauan pada malam hari.
+            </p>
+
+               </div>
+
+           </main>
+
+           <!-- PROJECT -->
+            <section class="project" id="project">
+
+                <h2>Contact Me ♡</h2>
+
+                <p>Let's be friends on social media!</p>
+
+                <!-- ganti tanda # dengan link akun sosial media kamu -->
+
+                 <a href="https://www.tiktok.com/id-ID/" target="_blank">tiktok</a>
+
+                 <a href="https://youtu.be/TpUPoHQSjpA?si=2NqT1IGI7kXsndqs" target="_blank">youtube</a>
+
+                 
+
+            </section>
+        
+            <!-- FOOTER -->
+             <footer>
+
+                <p>© 2026 Neha Izza Ramadhani</p>
+
+                 <p>Made with love ♡</p>
+
+             </footer>
+
+
+</body>
+</html>
